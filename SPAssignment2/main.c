@@ -10,6 +10,5 @@
 #include "SPBufferset.h"
 
 int main() {
-	printf("SP2");
 	return 0;
 }
