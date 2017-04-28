@@ -50,4 +50,5 @@ int main() {
 	} else {
 		printf("You win!\n");
 	}
+	return 0;
 }
