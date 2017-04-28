@@ -15,8 +15,8 @@ void compStepPrint(int heapNum, int objectsNum);
 void statusPrint(int array[], int heapsNum, int turnNum);
 void boardPrint(int array[], int heapsNum);
 int checkHeapsValidInputNum(int heapsNum);
-int checkHeapObjectValidInputNum(int heapSize);
-int checkHeapIndexandObjectsValidInputNum(int heapNum, int heapSize);
+int checkHeapObjectValidInputNum(int heapSize, int heapNum);
+int checkHeapIndexandObjectsValidInputNum(int heapsNum);
 int inputHeapsArray(int array[], int heapsNum);
 
 

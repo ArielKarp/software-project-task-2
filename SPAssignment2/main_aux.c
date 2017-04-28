@@ -35,23 +35,60 @@ void statusPrint(int array[], int heapsNum, int turnNum) {
 void boardPrint(int array[], int heapsNum) {
 	int maxObjects = 0;
 	int index = 0;
-	for (; index < HEAPSARRAYSIZE; ++index) {
+	for (; index < heapsNum; ++index) {
 		if (array[index] > maxObjects) {
 			maxObjects = array[index];
 		}
 	}
-	int heapIndex = 0;
-	for (; heapIndex < maxObjects; ++heapIndex) {
-		int index = 0;
-		for (; index < heapsNum; ++index) {
-			if(array[heapsNum]>=maxObjects){
+
+	int lineIndex = 1;
+	for (; lineIndex <= maxObjects; maxObjects--) {
+		int heapindex = 0;
+		for (; heapindex < heapsNum; ++heapindex) {
+			if(array[heapindex]>=maxObjects){
 				printf("*\t");
 			}
 			else{
 				printf("\t");
 			}
 		}
-		maxObjects--;
+		printf("\n");
 	}
 }
 
+int checkHeapsValidInputNum(int heapsNum){
+	if(heapsNum<1 || heapsNum>32){
+		printf("Error: the number of heaps must be between 1 and 32.\n");
+		return 0;
+	}
+	return 1;
+}
+
+int checkHeapObjectValidInputNum(int heapSize, int heapNum){
+	if(heapSize<=0){
+		printf("Error: the size of heap %d should be positive.\n", heapNum);
+		return 0;
+	}
+	return 1;
+}
+
+//int checkHeapIndexandObjectsValidInputNum(int heapNum, int heapSize);
+
+int inputHeapsArray(int array[], int heapsNum){
+	printf("Enter the heap sizes:\n");
+	int intChar;
+	getchar();
+	while ((intChar = getchar()) != '\n' && intChar != EOF && heapsNum!=0) {
+		int numLen = 0;
+		int num = 0;
+		if(intChar != ' '){
+
+		}
+		else{
+
+		}
+
+		heapsNum--;
+		}
+
+}
