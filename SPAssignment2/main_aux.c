@@ -18,16 +18,40 @@ int arrayIsEmpty(int array[]) {
 	return 1;
 }
 
-void compStepPrint(int heapNum, int objectsNum){
+void compStepPrint(int heapNum, int objectsNum) {
 	printf("Computer takes %d objects from heap %d.\n", objectsNum, heapNum);
 }
 
-void statusPrint(int array[], int turnNum){
+void statusPrint(int array[], int heapsNum, int turnNum) {
 	int index = 0;
-		printf("In turn %d the heap sizes are: ",turnNum);
-		for (; index < HEAPSARRAYSIZE; ++index) {
-			printf("h%d=%d ",index+1, array[index]);
+	printf("In turn %d the heap sizes are: ", turnNum);
+	for (; index < heapsNum - 1; ++index) {
+		printf("h%d=%d ", index + 1, array[index]);
+	}
+	printf("h%d=%d", heapsNum, array[heapsNum - 1]);
+	printf(".\n");
+}
+
+void boardPrint(int array[], int heapsNum) {
+	int maxObjects = 0;
+	int index = 0;
+	for (; index < HEAPSARRAYSIZE; ++index) {
+		if (array[index] > maxObjects) {
+			maxObjects = array[index];
 		}
-		printf(".\n");
+	}
+	int heapIndex = 0;
+	for (; heapIndex < maxObjects; ++heapIndex) {
+		int index = 0;
+		for (; index < heapsNum; ++index) {
+			if(array[heapsNum]>=maxObjects){
+				printf("*\t");
+			}
+			else{
+				printf("\t");
+			}
+		}
+		maxObjects--;
+	}
 }
 
