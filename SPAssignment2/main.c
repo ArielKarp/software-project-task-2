@@ -20,7 +20,7 @@ int main() {
 
 	// Input num of heaps
 	printf("Enter the number of heaps:\n");
-	scanf("%d", &numOfHeaps);
+	scanf("%d", &numOfHeaps); ////maybe not use scanf because if we input "1 3 2 5" for example then numOfHeaps is 1
 	if (!checkHeapsValidInputNum(numOfHeaps)) {
 		printf("DEBUG: Num of heaps: %d\tExiting...\n", numOfHeaps);
 		return 0;

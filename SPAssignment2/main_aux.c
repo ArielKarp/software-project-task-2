@@ -91,7 +91,7 @@ int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps){
 	int intChar = 0;
 	int finished = 0;
 	int heapIndex = 0, numOfObj = 0;
-	printf("Your turn: please enter the	heap index and the number of removed objects.\n");
+	printf("Your turn: please enter the heap index and the number of removed objects.\n");
 	getchar();
 	while (!finished){
 		// Get heap index
@@ -118,7 +118,7 @@ int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps){
 			finished = 1;
 		}
 	}
-	printf("You take X objects from heap Y.\n");
+	printf("You take %d objects from heap %d.\n", numOfObj, heapIndex);
 	heapsArray[heapIndex -1] = heapsArray[heapIndex -1] - numOfObj;
 
 	return 1;
