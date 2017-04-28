@@ -16,7 +16,7 @@
 int main() {
 
 	// isUserTurn: 0- computer, 1- User
-	int heapArray [32] = {0}, numOfHeaps = 0, turnNum = 0, isUserTurn = 0, objRemove = 0, heapNum = 0;
+	int heapArray [HEAPSARRAYSIZE] = {0}, numOfHeaps = 0, turnNum = 0, isUserTurn = 0, objRemove = 0, heapNum = 0;
 
 	// Input num of heaps
 	printf("Enter the number of heaps:\n");
