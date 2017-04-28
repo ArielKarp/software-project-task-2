@@ -10,6 +10,15 @@
 #ifndef MAIN_AUX_H_
 #define MAIN_AUX_H_
 
+int arrayIsEmpty(int array[]);
+void compStepPrint(int heapNum, int objectsNum);
+void statusPrint(int array[], int turnNum);
+void boardPrint(int array[], int heapsNum);
+int checkHeapsValidInputNum(int heapsNum);
+int checkHeapObjectValidInputNum(int heapSize);
+int checkHeapIndexandObjectsValidInputNum(int heapNum, int heapSize);
+
+
 
 
 
