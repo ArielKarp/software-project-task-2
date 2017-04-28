@@ -25,7 +25,6 @@ int main() {
 		printf("DEBUG: Num of heaps: %d\tExiting...\n", numOfHeaps);
 		return 0;
 	}
-	printf("Enter the heap sizes:\n");
 	if (!inputHeapsArray(heapArray, numOfHeaps)) {
 		printf("DEBUG: Failed to get heaps numbers\tExiting...\n");
 		return 0;
@@ -39,9 +38,10 @@ int main() {
 			compStepPrint(heapNum, objRemove);
 		} else {
 			boardPrint(heapArray, numOfHeaps);
-			checkHeapIndexandObjectsValidInputNum(numOfHeaps);
+			checkHeapIndexandObjectsValidInputNum(heapArray, numOfHeaps);
 		}
 		isUserTurn = (isUserTurn + 1) % 2;
+		turnNum++;
 	}
 	// Change turns again after finish
 	isUserTurn = (isUserTurn + 1) % 2;

@@ -141,13 +141,16 @@ int inputHeapsArray(int heapsArray[], int numOfHeaps) {
 				arrayIndex++;
 				numLen = 0;
 				num = 0;
+				numOfHeaps--;
 			}
 			else{
 				printf("Error: the size of heap %d should be positive.\n", arrayIndex+1);
 				return 0;
 			}
 		}
-		numOfHeaps--;
+	}
+	if(num > 0){
+		heapsArray[arrayIndex] = num;
 	}
 	return 1;
 
