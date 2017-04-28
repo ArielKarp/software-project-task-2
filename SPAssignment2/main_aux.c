@@ -79,8 +79,16 @@ int inputHeapsArray(int array[], int heapsNum){
 	int intChar;
 	getchar();
 	while ((intChar = getchar()) != '\n' && intChar != EOF && heapsNum!=0) {
-		while
+		int numLen = 0;
+		int num = 0;
+		if(intChar != ' '){
 
+		}
+		else{
+
+		}
+
+		heapsNum--;
 		}
 
 }
