@@ -9,7 +9,7 @@
 
 #define HEAPSARRAYSIZE 32
 
-
+//check if array is empty in every cell of the array
 int arrayIsEmpty(int heapsArray[]) {
 	int index = 0;
 	for (; index < HEAPSARRAYSIZE; ++index) {
@@ -20,10 +20,12 @@ int arrayIsEmpty(int heapsArray[]) {
 	return 1;
 }
 
+//prints the computer step
 void compStepPrint(int heapNum, int objectsNum) {
 	printf("Computer takes %d objects from heap %d.\n", objectsNum, heapNum);
 }
 
+//prints the status of the game
 void statusPrint(int heapsArray[], int numOfHeaps, int turnNum) {
 	int index = 0;
 	printf("In turn %d heap sizes are: ", turnNum);
@@ -34,6 +36,7 @@ void statusPrint(int heapsArray[], int numOfHeaps, int turnNum) {
 	printf(".\n");
 }
 
+//prints the board of the game
 void boardPrint(int heapsArray[], int numOfHeaps) {
 	int maxObjects = 0;
 	int index = 0;
@@ -65,6 +68,7 @@ void boardPrint(int heapsArray[], int numOfHeaps) {
 	}
 }
 
+//check if the input is valid between 1 to 32
 int checkHeapsValidInputNum(int numOfHeaps) {
 	if (numOfHeaps < 1 || numOfHeaps > 32) {
 		printf("Error: the number of heaps must be between 1 and 32.\n");
@@ -73,6 +77,7 @@ int checkHeapsValidInputNum(int numOfHeaps) {
 	return 1;
 }
 
+//check if the input is valid
 int checkHeapObjectValidInputNum(int heapSize, int heapNum) {
 	if (heapSize <= 0) {
 		printf("Error: the size of heap %d should be positive.\n", heapNum);
@@ -106,6 +111,7 @@ int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps) {
 	return 1;
 }
 
+//input from user
 int inputHeapsArray(int heapsArray[], int numOfHeaps) {
 	int numLen = 0;
 	int num = 0;

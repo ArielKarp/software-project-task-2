@@ -1,7 +1,8 @@
 /*
- * sp_nim.h
+ * main.c
  *
- *      Author: Ariel
+ *      Author: Ariel Karpilovski 308552454
+ *      		Ron Tabibian 308472596
  */
 
 #include <stdio.h>

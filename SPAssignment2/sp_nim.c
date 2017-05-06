@@ -7,6 +7,7 @@
 
 #include "sp_nim.h"
 
+//computer step strategy calculation
 int computeStep(int heapArray[], int arrSize, int* objectRemoved) {
 	int winnerHeap = 0;
 	int losingHeap = 0;
@@ -24,6 +25,8 @@ int computeStep(int heapArray[], int arrSize, int* objectRemoved) {
 	}
 }
 
+
+//Nim Sum calculation
 int computeNimSum(int heapArray[], int arrSize) {
 	int nimSum = 0;
 	int index = 0;
@@ -33,6 +36,7 @@ int computeNimSum(int heapArray[], int arrSize) {
 	return nimSum;
 
 }
+
 
 int findWinnerHeap(int heapArray[], int arrSize, int nimSum) {
 	int index = 0;
