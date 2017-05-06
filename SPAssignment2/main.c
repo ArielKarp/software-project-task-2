@@ -22,11 +22,9 @@ int main() {
 	printf("Enter the number of heaps:\n");
 	scanf("%d", &numOfHeaps); ////maybe not use scanf because if we input "1 3 2 5" for example then numOfHeaps is 1
 	if (!checkHeapsValidInputNum(numOfHeaps)) {
-		printf("DEBUG: Num of heaps: %d\tExiting...\n", numOfHeaps);
 		return 0;
 	}
 	if (!inputHeapsArray(heapArray, numOfHeaps)) {
-		printf("DEBUG: Failed to get heaps numbers\tExiting...\n");
 		return 0;
 	}
 
