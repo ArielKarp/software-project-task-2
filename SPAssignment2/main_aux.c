@@ -9,19 +9,6 @@
 
 #define HEAPSARRAYSIZE 32
 
-// p >= 0
-int powIm(int num, int p) {
-	if (p == 0) {
-		return 1;
-	} else if (p == 1) {
-		return num;
-	}
-	int index = 0, output = num;
-	for (; index < (p - 1); ++index) {
-		output = output * num;
-	}
-	return output;
-}
 
 int arrayIsEmpty(int heapsArray[]) {
 	int index = 0;
@@ -128,7 +115,7 @@ int inputHeapsArray(int heapsArray[], int numOfHeaps) {
 	getchar();
 	while ((intChar = getchar()) != '\n' && intChar != EOF && numOfHeaps != 0) {
 		if (intChar != ' ') {
-			num = (intChar - 48) + (num * powIm(10, numLen));
+			num = (intChar - 48) + (num * 10);
 			numLen++;
 		} else {
 			if (num > 0) {
