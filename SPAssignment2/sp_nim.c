@@ -10,7 +10,6 @@ int computeStep(int heapArray[], int arrSize, int* objectRemoved) {
 	int winnerHeap = 0;
 	int losingHeap = 0;
 	int nimSum = computeNimSum(heapArray, arrSize);
-	printf("DEBUG: Nim sum: %d\n", nimSum);
 	if (nimSum != 0) {
 		winnerHeap = findWinnerHeap(heapArray, arrSize, nimSum);
 		*objectRemoved = heapArray[winnerHeap] - (heapArray[winnerHeap] ^ nimSum);
@@ -40,7 +39,6 @@ int findWinnerHeap(int heapArray[], int arrSize, int nimSum) {
 	for(; index < arrSize; index++) {
 		heapValue = heapArray[index] ^ nimSum;
 		if (heapValue < heapArray[index]) {
-			printf("HERE %d", index);
 			return index;
 		}
 	}
