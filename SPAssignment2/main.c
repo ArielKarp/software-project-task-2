@@ -1,8 +1,8 @@
 /*
  * main.c
-
  *
- *      Author: Ariel
+ *      Author: Ariel Karpilovski 308552454
+ *      		Ron Tabibian 308472596
  */
 
 #include <stdio.h>
@@ -20,7 +20,7 @@ int main() {
 
 	// Input num of heaps
 	printf("Enter the number of heaps:\n");
-	scanf("%d", &numOfHeaps); ////maybe not use scanf because if we input "1 3 2 5" for example then numOfHeaps is 1
+	scanf("%d", &numOfHeaps);
 	if (!checkHeapsValidInputNum(numOfHeaps)) {
 		return 0;
 	}

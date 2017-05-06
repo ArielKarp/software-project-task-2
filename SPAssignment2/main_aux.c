@@ -1,7 +1,8 @@
 /*
- * main_aux.c
+ * main.c
  *
- *      Author: Ariel
+ *      Author: Ariel Karpilovski 308552454
+ *      		Ron Tabibian 308472596
  */
 
 #include "main_aux.h"
