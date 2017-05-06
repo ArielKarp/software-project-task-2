@@ -38,7 +38,7 @@ void compStepPrint(int heapNum, int objectsNum) {
 
 void statusPrint(int heapsArray[], int numOfHeaps, int turnNum) {
 	int index = 0;
-	printf("In turn %d the heap sizes are: ", turnNum);
+	printf("In turn %d heap sizes are: ", turnNum);
 	for (; index < numOfHeaps - 1; ++index) {
 		printf("h%d=%d ", index + 1, heapsArray[index]);
 	}
@@ -58,11 +58,19 @@ void boardPrint(int heapsArray[], int numOfHeaps) {
 	int lineIndex = 1;
 	for (; lineIndex <= maxObjects; maxObjects--) {
 		int heapindex = 0;
-		for (; heapindex < numOfHeaps; ++heapindex) {
+		for (; heapindex < numOfHeaps - 1; ++heapindex) {
 			if (heapsArray[heapindex] >= maxObjects) {
 				printf("*\t");
 			} else {
-				printf("\t");
+				printf(" \t");
+			}
+		}
+		// Print last collum without \t
+		if (heapindex < numOfHeaps) {
+			if (heapsArray[heapindex] >= maxObjects) {
+				printf("*");
+			} else {
+				printf(" ");
 			}
 		}
 		printf("\n");
@@ -85,31 +93,17 @@ int checkHeapObjectValidInputNum(int heapSize, int heapNum) {
 	return 1;
 }
 
-int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps){
-	int numLen = 0;
-	int num = 0;
-	int intChar = 0;
+int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps) {
 	int finished = 0;
 	int heapIndex = 0, numOfObj = 0;
-	printf("Your turn: please enter the heap index and the number of removed objects.\n");
-	getchar();
-	while (!finished){
+	printf(
+			"Your turn: please enter the heap index and the number of removed objects.\n");
+	while (!finished) {
 		// Get heap index
-		while ((intChar = getchar()) != ' ') {
-			num = (intChar - 48) + (num * powIm(10, numLen));
-			numLen++;
-		}
-		heapIndex = num;
-		numLen = 0;
-		num = 0;
-		getchar();
 		// Get num of Objects
-		while ((intChar = getchar()) != '\n' && intChar != EOF) {
-			num = (intChar - 48) + (num * powIm(10, numLen));
-			numLen++;
-		}
-		numOfObj = num;
-		if(heapIndex < 1 || heapIndex > numOfHeaps || numOfObj > heapsArray[heapIndex -1]) {
+		scanf("%d %d", &heapIndex, &numOfObj);
+		if (heapIndex < 1 || heapIndex > numOfHeaps || numOfObj < 1
+				|| numOfObj > heapsArray[heapIndex - 1]) {
 			printf("Error: Invalid input.\nPlease enter again the heap "
 					"index and the number of removed objects.\n");
 			heapIndex = 0;
@@ -119,7 +113,7 @@ int checkHeapIndexandObjectsValidInputNum(int heapsArray[], int numOfHeaps){
 		}
 	}
 	printf("You take %d objects from heap %d.\n", numOfObj, heapIndex);
-	heapsArray[heapIndex -1] = heapsArray[heapIndex -1] - numOfObj;
+	heapsArray[heapIndex - 1] = heapsArray[heapIndex - 1] - numOfObj;
 
 	return 1;
 }
@@ -136,20 +130,20 @@ int inputHeapsArray(int heapsArray[], int numOfHeaps) {
 			num = (intChar - 48) + (num * powIm(10, numLen));
 			numLen++;
 		} else {
-			if(num > 0){
+			if (num > 0) {
 				heapsArray[arrayIndex] = num;
 				arrayIndex++;
 				numLen = 0;
 				num = 0;
 				numOfHeaps--;
-			}
-			else{
-				printf("Error: the size of heap %d should be positive.\n", arrayIndex+1);
+			} else {
+				printf("Error: the size of heap %d should be positive.\n",
+						arrayIndex + 1);
 				return 0;
 			}
 		}
 	}
-	if(num > 0){
+	if (num > 0) {
 		heapsArray[arrayIndex] = num;
 	}
 	return 1;
